@@ -1,26 +1,38 @@
+import onboarding1 from "@/assets/images/onboarding1.png";
+import onboarding2 from "@/assets/images/onboarding2.png";
+import onboarding3 from "@/assets/images/onboarding3.png";
+import onboarding4 from "@/assets/images/onboarding4.png";
+
+export const images = {
+    onboarding1,
+    onboarding2,
+    onboarding3,
+    onboarding4,
+}
+
 export const onBoarding = [
     {
         id: 1,
         title: 'Welcome to BeMyDriver',
         description: 'Get safe, reliable, and affordable rides at your fingertips anytime.',
-        image: require('../assets/onboarding1.png'),
+        image:  images.onboarding1,
     },
     {
         id: 2,
         title: 'Track Your Ride Live',
         description: 'Follow your driver’s location in real time and never miss your ride.',
-        image: require('../assets/onboarding2.png'),
+        image: images.onboarding2,
     },
     {
         id: 3,
         title: 'Seamless Payments',
         description: 'Pay with card, wallet, or cash. It’s fast, secure, and simple.',
-        image: require('../assets/onboarding3.png'),
+        image: images.onboarding3,
     },
     {
         id: 4,
         title: 'Book a Ride in Seconds',
         description: 'Just enter your destination and we’ll handle the rest.',
-        image: require('../assets/onboarding4.png'),
+        image: images.onboarding4,
     },
 ];
