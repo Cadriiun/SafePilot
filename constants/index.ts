@@ -9,6 +9,9 @@ import user from "@/assets/images/user.png";
 import chat from "@/assets/images/chat.png";
 import signup from "@/assets/images/signup.png";
 import google from "@/assets/images/google.png";
+import checkMark from "@/assets/images/checkMark.png";
+import email from "@/assets/images/email.png";
+import password from "@/assets/images/password.png";
 
 export const images = {
     onboarding1,
@@ -24,6 +27,10 @@ export const icons = {
     user,
     chat,
     google,
+    checkMark,
+    email,
+    password,
+
 };
 
 export const onBoarding = [

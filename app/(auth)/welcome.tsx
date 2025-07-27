@@ -40,7 +40,7 @@ const Onboarding = () => {
                                 height: 280,
                                 maxWidth: 350,
                                 marginBottom: 24,
-                                paddingTop:50,
+                                paddingTop: 50,
                                 paddingBottom: 100
                             }}
                         />
