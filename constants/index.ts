@@ -8,6 +8,7 @@ import ride from "@/assets/images/ride.png";
 import user from "@/assets/images/user.png";
 import chat from "@/assets/images/chat.png";
 import signup from "@/assets/images/signup.png";
+import google from "@/assets/images/google.png";
 
 export const images = {
     onboarding1,
@@ -22,6 +23,7 @@ export const icons = {
     ride,
     user,
     chat,
+    google,
 };
 
 export const onBoarding = [

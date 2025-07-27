@@ -1,6 +1,5 @@
 import {Image} from "expo-image";
 import {ImageSourcePropType, View} from "react-native";
-import {icon} from "@/constants";
 import {Tabs} from "expo-router";
 
 const TabIcon = ({source, focused}: { source: ImageSourcePropType; focused: boolean }) => (
