@@ -13,7 +13,11 @@ const SignUp = () => {
                 <View className="relative w-full h-[250]">
                     <Image
                         source={signupImage}
-                        className="z-0 w-full h-[500]"
+                        style={{
+                            zIndex: 0,
+                            width: '100%',
+                            height: 200,
+                        }}
                         contentFit="cover"
                     />
                     <Text className="text-3xl text-black absolute bottom-6 left-6">
@@ -21,7 +25,7 @@ const SignUp = () => {
                     </Text>
                 </View>
                 <View className={"p-5"}>
-                    <InputField ></InputField>
+                    {/*<InputField ></InputField>*/}
                 </View>
             </ScrollView>
         </SafeAreaView>
