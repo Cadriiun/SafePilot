@@ -1,0 +1,4 @@
+diff --git a/node_modules/swr/_internal/constants.js b/node_modules/swr/_internal/constants.js
+new file mode 100644
+index 0000000..4a6c509
+Binary files /dev/null and b/node_modules/swr/_internal/constants.js differ
