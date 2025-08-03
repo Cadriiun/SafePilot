@@ -6,12 +6,13 @@ import {Image} from "expo-image";
 import {icons} from "@/constants";
 import {useSignIn} from "@clerk/clerk-react";
 import {useRouter} from "expo-router";
+import {useAuth} from "@clerk/clerk-expo";
 
 
 const SignIn = () => {
     const {signIn, setActive, isLoaded} = useSignIn()
+    const {isSignedIn} = useAuth();
     const router = useRouter()
-
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -23,10 +24,11 @@ const SignIn = () => {
     };
 
     const onSignInPress = async () => {
-        if (!isLoaded) return
+        if (!isLoaded || isSignedIn) return;
 
         // Start the sign-in process using the email and password provided
         try {
+
             const signInAttempt = await signIn.create({
                 identifier: form.email,
                 password: form.password,
@@ -36,7 +38,7 @@ const SignIn = () => {
             // and redirect the user
             if (signInAttempt.status === 'complete') {
                 await setActive({session: signInAttempt.createdSessionId})
-                router.replace('/')
+                router.replace('/(root)/(tabs)/home')
             } else {
                 // If the status isn't complete, check why. User might need to
                 // complete further steps.
@@ -55,7 +57,7 @@ const SignIn = () => {
 
             <View className={"flex-row justify-end items-center mt-[50px]"}>
                 <Text className={"text-white text-lg font-extralight"}>Don't have an account?</Text>
-                <TouchableOpacity onPress={() => router.replace("/(auth)/sign-in")}
+                <TouchableOpacity onPress={() => router.replace("/(auth)/sign-up")}
                                   className={" px-4 py-2 rounded-xl "} style={{backgroundColor: "#5D57EF"}}>
                     <Text className={"text-white font-semibold text-sm"}>Get Started</Text>
                 </TouchableOpacity>
@@ -70,11 +72,13 @@ const SignIn = () => {
                 <Text className={"text-neutral-500 mb-6 text-m"}>Enter your details below</Text>
                 <InputField
                     placeholder="Enter your Email"
+                    icon={icons.email}
                     value={form.email}
                     onChangeText={(value) => setForm({...form, email: value,})}
                 ></InputField>
                 <InputField
                     placeholder="Enter your Password"
+                    icon={icons.password}
                     value={form.password}
                     secureTextEntry={true}
                     onChangeText={(value: any) => setForm({...form, password: value,})}

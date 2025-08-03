@@ -1,4 +1,4 @@
-import {Text, TouchableOpacity, View} from "react-native";
+import {Alert, Text, TouchableOpacity, View} from "react-native";
 import React, {useState} from "react";
 import {LinearGradient} from "expo-linear-gradient";
 import {router} from "expo-router";
@@ -48,7 +48,7 @@ const SignUp = () => {
 
                 state: 'pending',
             })
-        } catch (err) {
+        } catch (err : any) {
             // See https://clerk.com/docs/custom-flows/error-handling
             // for more info on error handling
             Alert.alert('Error', err.erros[0].longMessage)
